@@ -2,14 +2,37 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-         <q-toolbar-title >
-          Live Currency Converter
-        </q-toolbar-title>
+        <q-toolbar-title>Live Currency Converter</q-toolbar-title>
 
-           <q-separator dark vertical />
-      <q-btn :class="{'active':homeactive}" @click="homepressed()" to="/" stretch flat label="Home" />
-      <q-separator dark vertical />
-      <q-btn :class="{'active':aboutactive}" @click="aboutpressed()" to="/about" stretch flat label="About" />
+        <q-separator dark vertical />
+        <q-btn
+          :class="{'active':homeactive}"
+          @click="homepressed()"
+          to="/"
+          stretch
+          flat
+          label="Home"
+        />
+        <q-separator dark vertical />
+        <q-btn
+          :class="{'active':aboutactive}"
+          @click="aboutpressed()"
+          to="/about"
+          stretch
+          flat
+          label="About"
+        />
+        <q-separator dark vertical />
+        <q-btn
+          type="a"
+          href="https://github.com/immohanravi/livecurrencyconverter.git"
+          target="_blank"
+          color="yellow"
+          class="text-overline"
+          stretch
+          flat
+          label="Github"
+        />
       </q-toolbar>
     </q-header>
 
@@ -21,35 +44,30 @@
 
 <script>
 export default {
-  name: 'MainLayout',
+  name: "MainLayout",
 
-  components: {
-   
-  },
-  data () {
+  components: {},
+  data() {
     return {
-      tab: '',
+      tab: "",
       homeactive: true,
       aboutactive: false
-    }
+    };
   },
   methods: {
-    homepressed(){
+    homepressed() {
       this.homeactive = true;
       this.aboutactive = false;
     },
-    aboutpressed(){
+    aboutpressed() {
       this.homeactive = false;
       this.aboutactive = true;
     }
   }
-
- 
-  
-}
+};
 </script>
 <style scoped>
-.active{
+.active {
   background: #0c2780;
 }
 </style>
