@@ -8,7 +8,7 @@
           @input="select1changed"
           :options="options1"
           :dense="dense"
-          class="text-h6"
+          class="text-h6 selectvalue"
           :options-dense="denseOpts"
         >
           <template v-slot:prepend>
@@ -16,7 +16,7 @@
           </template>
         </q-select>
 
-        <q-icon @click="togglecurrency()" v-ripple name="compare_arrows" size="48px" />
+        <q-icon color="red" @click="togglecurrency()" v-ripple name="compare_arrows" size="48px" />
 
         <q-select
           outlined
@@ -24,7 +24,7 @@
           v-model="select2"
           :options="options2"
           :dense="dense"
-          class="text-h6"
+          class="text-h6 selectvalue"
           :options-dense="denseOpts"
         >
           <template v-slot:prepend>
@@ -145,23 +145,25 @@ export default {
 
 <style scoped>
 .main-container {
-  display: flex;
-  flex-direction: column;
-}
-.rowone{
-   padding: 25px;
-  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 500px;
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: 1fr;
   justify-content: center;
 }
-.rowtwo{
-   padding: 25px;
-  display: flex;
-   justify-content: center;
-}
-.rowthree{
-  padding: 25px;
-  display: flex;
-  justify-content: space-evenly;
-}
 
+.rowone {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+.selectvalue {
+  width: 100%;
+}
+.rowthree {
+  justify-self: center;
+}
 </style>
